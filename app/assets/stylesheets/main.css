@@ -1,0 +1,121 @@
+body {
+	height: 100%;
+}
+
+div.component {
+	background-color: rgba(32, 122, 233, 0.9);
+	position: relative;
+	height: 100%;
+	width: 1000px;
+	margin: 0 auto;
+}
+
+div.control {
+	position: absolute;
+	background-color: red;
+	left: 200px;
+	top: 100px;
+}
+
+div#bg {
+	position: absolute;
+	z-index: 0;
+}
+
+div#bg img {
+	width: 800px;
+	height: 500px;
+}
+
+div#matrix {
+	background-color: rgba(32, 32, 32, 0.5);
+	position: absolute;
+	z-index: 1;
+	top: 64px;
+	left: 506px;
+}
+
+div#knob-wrapper-1 {
+	background-color: rgba(9, 29, 199, 0.2);
+	position: absolute;
+	z-index: 20;
+	top: 200px;
+	left: 90px;
+}
+
+div#knob-wrapper {
+	background-color: rgba(99, 99, 99, 0.5);
+	position: absolute;
+	z-index: 2;
+	top: 330px;
+	left: 300px;
+}
+
+
+button#start {
+	border-width: 0px;
+	position: absolute;
+	left: 80px;
+	top: 343px;
+	cursor: pointer;
+}
+
+button#stop {
+	border-width: 0px;
+	position: absolute;
+	left: 130px;
+	top: 343px;
+	cursor: pointer;
+}
+
+div#led {
+	position: absolute;
+	z-index: 4;
+	left: 200px;
+	top: 343px;
+}
+
+div#debug {
+	background-color: rgba(32, 32, 32, 0.5);
+	width: 100px;
+	float: right;
+	z-index: 100;
+}
+
+table.grid {
+	background: black;
+	border-width: 1px;
+}
+
+table.grid td {
+	text-align: center;
+	background-color: rgba(230, 232, 222, 0.8);
+	border-width: 0px;
+	border-style: solid;
+	border-color: #000000;
+	padding: 0px;
+	margin: 0px;
+	width: 4px;
+	height: 4px;
+	cursor: pointer;
+}
+
+table.grid td.on {
+	background-color: #696969;
+}
+
+table.grid td.accent {
+	background-color: #000000;
+}
+
+div#led-bg {
+	position: relative;
+	z-index: 1;
+}
+
+div#tempo {
+	position: absolute;
+	top: 0px;
+	z-index: 2;
+	color: red;
+}

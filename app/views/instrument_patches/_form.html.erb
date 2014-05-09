@@ -1,0 +1,25 @@
+<%= form_for(@instrument_patch) do |f| %>
+  <% if @instrument_patch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@instrument_patch.errors.count, "error") %> prohibited this instrument_patch from being saved:</h2>
+
+      <ul>
+      <% @instrument_patch.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :instrument_id %><br>
+    <%= f.number_field :instrument_id %>
+  </div>
+  <div class="field">
+    <%= f.label :patch_id %><br>
+    <%= f.number_field :patch_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

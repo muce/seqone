@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pattern.name %>
+</p>
+
+<p>
+  <strong>Beats:</strong>
+  <%= @pattern.beats %>
+</p>
+
+<p>
+  <strong>Steps:</strong>
+  <%= @pattern.steps %>
+</p>
+
+<p>
+  <strong>Hex:</strong>
+  <%= @pattern.hex %>
+</p>
+
+<%= link_to 'Edit', edit_pattern_path(@pattern) %> |
+<%= link_to 'Back', patterns_path %>

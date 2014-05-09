@@ -1,0 +1,27 @@
+<h1>Listing patches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patches.each do |patch| %>
+      <tr>
+        <td><%= patch.name %></td>
+        <td><%= link_to 'Show', patch %></td>
+        <td><%= link_to 'Edit', edit_patch_path(patch) %></td>
+        <td><%= link_to 'Destroy', patch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Patch', new_patch_path %>

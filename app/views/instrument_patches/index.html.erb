@@ -1,0 +1,29 @@
+<h1>Listing instrument_patches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Instrument</th>
+      <th>Patch</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @instrument_patches.each do |instrument_patch| %>
+      <tr>
+        <td><%= instrument_patch.instrument_id %></td>
+        <td><%= instrument_patch.patch_id %></td>
+        <td><%= link_to 'Show', instrument_patch %></td>
+        <td><%= link_to 'Edit', edit_instrument_patch_path(instrument_patch) %></td>
+        <td><%= link_to 'Destroy', instrument_patch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Instrument patch', new_instrument_patch_path %>

@@ -1,0 +1,70 @@
+body {
+	background-color: #9a9a9a;
+	background-image: url("/images/TR-909_BG.jpg");
+	background-repeat: no-repeat;
+	background-position: top;
+}
+
+div#matrix {
+	position: absolute;
+	left: 660px;
+}
+
+table.grid {
+
+}
+
+table.grid td {
+	text-align: center;
+	background-color: #9a9a9a;
+	border-width: 0px;
+	border-style: solid;
+	border-color: #000000;
+	padding: 0px;
+	margin: 0px;
+	width: 10px;
+	height: 10px;
+	cursor: pointer;
+}
+
+table.grid td.on {
+	background-color: #aa1111;
+}
+
+table.grid td.accent {
+	background-color: #ff3333;
+}
+
+button.start {
+	border-width: 0px;
+	position: absolute;
+	left: 216px;
+	top: 342px;
+	cursor: pointer;
+}
+
+button.stop {
+	border-width: 0px;
+	position: absolute;
+	left: 268px;
+	top: 342px;
+	cursor: pointer;
+}
+
+div.led {
+	position: absolute;
+	left: 335px;
+	top: 343px;
+}
+
+div#led-bg {
+	position: absolute;
+	z-index: 1;
+}
+
+div#tempo {
+	position: absolute;
+	top: 0px;
+	z-index: 2;
+	color: red;
+}

@@ -1,0 +1,1 @@
+json.extract! @patch, :id, :name, :created_at, :updated_at
