@@ -29,6 +29,8 @@ function Sequencer(context, bpm, channels, draw) {
 	
 	this.gain = 0;
 	
+	this.pattern;
+	
 };
 
 Sequencer.prototype.init = function() {
@@ -123,6 +125,10 @@ Sequencer.prototype.update = function() {
 
 Sequencer.prototype.setGrid = function(grid) {
 	this.grid = grid;
+};
+
+Sequencer.prototype.setPattern = function(pattern) {
+	this.pattern = pattern;
 };
 
 Sequencer.prototype.setPatch = function(patch) {

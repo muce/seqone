@@ -12,9 +12,7 @@ div.component {
 
 div.control {
 	position: absolute;
-	background-color: red;
-	left: 200px;
-	top: 100px;
+	background-color: white;
 }
 
 div#bg {
@@ -31,48 +29,16 @@ div#matrix {
 	background-color: rgba(32, 32, 32, 0.5);
 	position: absolute;
 	z-index: 1;
-	top: 64px;
-	left: 506px;
-}
-
-div#knob-wrapper-1 {
-	background-color: rgba(9, 29, 199, 0.2);
-	position: absolute;
-	z-index: 20;
-	top: 200px;
-	left: 90px;
+	top: 274px;
+	left: 370px;
 }
 
 div#knob-wrapper {
-	background-color: rgba(99, 99, 99, 0.5);
+	background-color: rgba(0, 255, 99, 0.5);
 	position: absolute;
 	z-index: 2;
-	top: 330px;
-	left: 300px;
-}
-
-
-button#start {
-	border-width: 0px;
-	position: absolute;
-	left: 80px;
-	top: 343px;
-	cursor: pointer;
-}
-
-button#stop {
-	border-width: 0px;
-	position: absolute;
-	left: 130px;
-	top: 343px;
-	cursor: pointer;
-}
-
-div#led {
-	position: absolute;
-	z-index: 4;
-	left: 200px;
-	top: 343px;
+	top: 0px;
+	left: 0px;
 }
 
 div#debug {
@@ -106,16 +72,4 @@ table.grid td.on {
 
 table.grid td.accent {
 	background-color: #000000;
-}
-
-div#led-bg {
-	position: relative;
-	z-index: 1;
-}
-
-div#tempo {
-	position: absolute;
-	top: 0px;
-	z-index: 2;
-	color: red;
 }

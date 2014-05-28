@@ -4,6 +4,9 @@ var UI = (function() {
 	var matrix = [];
 	var buffer = [];
 	var buttons = {};
+	var knobs = [];
+	var controller;
+	var mixer;
 	var root, info, controls, audioDebug, uiDebug;
 	var txtTempo;
 
@@ -25,16 +28,7 @@ var UI = (function() {
 			
 			matrix[0] = new Matrix(root, 11, 32, update);
 			matrix[0].init();
-			var g = [];
-			/*
-			for (var i=0; i<11; i++) {
-				g[i] = new Array(32);
-				for (var j=0; j<32; j++) {
-					g[i][j] = Math.random()>0.1 ? 0 : 1;
-				}
-			}
-			matrix[0].load(g);
-			*/
+			
 			buttons = {
 				"start" : document.getElementById("start"),
 				"stop" : document.getElementById("stop"),
@@ -60,6 +54,19 @@ var UI = (function() {
 		update : function(note) {
 			matrix[0].update(note);
 		},
+		
+		setController : function(controller) {
+			this.controller = controller;
+		}, 
+		
+		setMatrix : function(pattern) {
+			//alert("UI.setMatrix: "+pattern.grid);
+			matrix[0].load(pattern.grid);
+		},
+		
+		setMixer : function(mixer) {
+			this.mixer = mixer;
+		}, 
 
 		resetCanvas : function(e) {
 			//canvas.width = window.innerWidth;
@@ -85,8 +92,8 @@ var UI = (function() {
 		
 		createButton : function(id, label, onClick) {
 			
-		}, 
-
+		},  
+		
 		createKnob : function(id, label, width, x, y, min, max, currentValue, color, onChange) {
 			//alert("UI.createKnob" +id+" "+label+" "+width+" "+x+" "+y+" "+min+" "+max+" "+currentValue+" "+color+" "+onChange);
 			var container = document.createElement("div");
@@ -97,11 +104,11 @@ var UI = (function() {
 			var knob = document.createElement("webaudio-knob");
 			knob.id = id;
 			knob.setAttribute("value", "" + currentValue);
-			knob.setAttribute("src", "images/webaudio-controls/LittlePhatty.png");
+			//knob.setAttribute("src", "images/webaudio-controls/LittlePhatty.png");
 			knob.setAttribute("min", "" + min);
 			knob.setAttribute("max", "" + max);
 			knob.setAttribute("step", (max - min) / 100);
-			knob.setAttribute("diameter", "64");
+			knob.setAttribute("diameter", width);
 			knob.setAttribute("sprites", "100");
 			knob.setAttribute("tooltip", label);
 			knob.onchange = onChange;

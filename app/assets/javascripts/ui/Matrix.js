@@ -80,7 +80,11 @@ Matrix.prototype.clear = function() {
 	this.callback(this.grid);
 };
 
-Matrix.prototype.get = function() {
+Matrix.prototype.get = function(grid) {
+	this.grid = grid;
+};
+
+Matrix.prototype.set = function() {
 	return this.grid;
 };
 

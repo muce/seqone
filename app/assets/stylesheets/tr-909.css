@@ -1,0 +1,51 @@
+#storage {
+	position: absolute;
+	top: 40px;
+	left: 280px;
+}
+
+#storage img {
+	width: 160px;
+	height: 120px;
+}
+
+button#start, button#stop {
+	border-width: 0;
+	margin: 0;
+	padding: 0;
+	background-color: red;
+	position: absolute;
+	cursor: pointer;
+}
+
+button#start img, button#stop img {
+	width: 30px;
+	height: 30px;
+}
+
+button#start {
+	left: 90px;
+	top: 283px;
+}
+
+button#stop {
+	left: 128px;
+	top: 283px;
+}
+
+div#led {
+	position: absolute;
+	z-index: 4;
+	left: 170px;
+	top: 273px;
+}
+
+div#led-bg {
+	position: relative;
+	z-index: 1;
+}
+
+div#led-bg img {
+	width: 80px;
+	height: 40px;
+}

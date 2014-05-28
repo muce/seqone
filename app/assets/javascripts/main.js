@@ -3,6 +3,7 @@ var matrix = [];
 var buffer = [];
 
 var sequencer;
+var controller;
 var mixer;
 var audioContext;
 var animFrame;
@@ -27,8 +28,8 @@ function init() {
 	    };
 	})();
     
-	var kit = 	[/*"/audio/DMD-FR909/FR909 Kicks/FR9 distkck/f9dstk01.wav",*/
-				 "/audio/samples/air.wav",
+	var kit = 	["/audio/DMD-FR909/FR909 Kicks/FR9 distkck/f9dstk01.wav",
+				 /*"/audio/samples/air.wav",*/
 				 "/audio/DMD-FR909/FR909 Snares/FR9 tightsnrs/f9tsnr01.wav", 
 				 "/audio/DMD-FR909/FR909 Toms/FR9 ltoms1/f9ltm01.wav", 
 				 "/audio/DMD-FR909/FR909 Toms/FR9 mtoms1/f9mtom01.wav", 
@@ -40,12 +41,9 @@ function init() {
 				 "/audio/DMD-FR909/FR909 Crash/f9crsh01.wav", 
 				 "/audio/DMD-FR909/FR909 Ride/f9ride01.wav"
 				 ];
-				 
-	// pattern[0] = new Array(13);
-	
-	// pattern[0] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-	
+
 	pattern[0] = new Pattern("test", 4, 32, 13);
+	pattern[0].test();
 	
 	buffer = new Array(kit.length);
 	var bufferLoader = new BufferLoader(audioContext, loaded);
@@ -59,11 +57,17 @@ function loaded(buf) {
 	sequencer = new Sequencer(audioContext, 120, buffer.length+1, draw);
 	sequencer.init();
 	sequencer.setPatch(buffer);
-	mixer = new Mixer(8);
+	sequencer.setPattern(pattern[0]);
+	mixer = new Mixer(13);
 	mixer.init();
 	UI.init();
-	var knobTempo = UI.createKnob("knob-tempo", "tempo", 64, 0, 0, 20, 200, 120, "#dddddd", tempochange);
-	var knobVolume = UI.createKnob("knob-volume", "volume", 64, 544, 0, 0, 1, 0.5, "#dddddd", volumechange);
+	UI.setMatrix(pattern[0]);
+	controller = new Controller("TR-909", sequencer);
+	UI.setController(controller);
+	controller.init();
+	UI.setMixer(mixer);
+	//UI.createKnobs();
+	//var knobTest = UI.createKnob("knob-test", "test", 364, 100, 100, 0, 100, 50, "#dddddd", volumechange);
 }
 
 function tempochange(e) {
